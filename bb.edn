@@ -1,0 +1,13 @@
+{:deps {io.github.borkdude/quickblog
+        #_"You use the newest SHA here:"
+        {:git/sha "709bccad08e3911ed7af912976684435ce2c1c6a"}}
+ :tasks
+ {:requires ([quickblog.cli :as cli])
+  :init (def opts {:blog-author "Ivan Krechetov"
+                   :blog-title "ikr / blog"
+                   :blog-description "Me, exploring software engineering and the world in general."
+                   :blog-root "https://ikr.li/blog"
+                   :about-link "https://ikr.li/"
+                   :discuss-link "https://github.com/ikr/ikr.li-blog/issues"})
+  quickblog {:doc "Start blogging quickly! Run `bb quickblog help` for details."
+             :task (cli/dispatch opts)}}}
